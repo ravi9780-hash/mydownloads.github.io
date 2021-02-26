@@ -1,0 +1,81 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'my.css'%}">
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="h"><b class="top">Mydownload.com</b></div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+
+    <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Youtube</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Instagram</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="#">Facebook</a>
+        </li>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#" tabindex="-1">About-Us</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+<form action="next">
+  <div class="mb-3">
+    <label class="form-label">Place The Link</label>
+    <input type="text"  class="form-control" name="text1">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+
+
+
+{% if thumbnail %}
+<div class="download111">
+<img src="{{thumbnail}}" class="imge"  width="35%" height="40%">
+  <br>
+
+<form action="download" class="quality1">
+  <b> Choose quality</b>
+  <div>
+  <label >Audio</label>
+  <input type="radio" name="quality"  value="audio"><br>
+  <label >720P</label>
+  <input type="radio" name="quality"  value="720p"><br>
+  <label >360P</label>
+  <input type="radio" name="quality"  value="360p"><br><label >144P</label>
+  <input type="radio" name="quality"   value="144p">
+  <input type="hidden" value="{{link}}" name="lj"><br>
+  <button type="submit" class=" btn11">Download</button><br>
+  <input type="hidden" value="{{link}}" name="lj">
+  </div>
+</form>
+</div>
+{% endif %}
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+</body>
+</html>
